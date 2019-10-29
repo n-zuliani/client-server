@@ -1,0 +1,13 @@
+<h1>Il super negozio di super prodotti!</h1>
+<button type="button" (click)="onRequest()">Cliccami per vedere la lista dei prodotti</button>
+<div *ngIf="loading">loading...</div>
+ <pre>{{data | json}}</pre>
+ <div *ngFor="let p of data">
+  <div>
+    <h1>{{p.product_name}}</h1>
+    Fornitore: {{p.supplier}}<br>
+    Quantit&agrave;: {{p.quantity}}<br>
+    Costo Unitario: {{p.unit_cost}}
+  </div>
+ </div>
+
