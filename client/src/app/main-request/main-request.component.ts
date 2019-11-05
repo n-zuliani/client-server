@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class MainRequestComponent implements OnInit {
 
-  data: Object;
+  data: Object[];
   loading: boolean;
   o: Observable<Object>;
 
@@ -20,13 +20,13 @@ export class MainRequestComponent implements OnInit {
 
   onRequest(): void{
     this.loading = true;
-    this.o = this.http.get('https://3000-f5ccc730-59c7-4ff3-bc36-84cad2227df3.ws-eu0.gitpod.io/api/products');
+    this.o = this.http.get('https://3000-e4d86efd-aa80-4b0b-a94c-b40ef1c98f29.ws-eu01.gitpod.io/api/products');
     this.o.subscribe(this.getData);
   }
 
   getData = (d : Object) =>
   {
-     this.data = d;
+     this.data = d['products'];
      this.loading = false;
   }
 
